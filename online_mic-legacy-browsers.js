@@ -255,7 +255,7 @@ async function experimentInit() {
     pos: [0, 0], draggable: false, height: 0.05,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
-    depth: -1.0 
+    depth: 0.0 
   });
   
   // Create some handy timers
@@ -1029,7 +1029,10 @@ function never_ending_routineRoutineBegin(snapshot) {
     psychoJS._saveResults = 0;
      
     // Generate filename for results
-    let filename = psychoJS._experiment._trialsData; 
+    let filename = psychoJS._experiment._experimentName + '_' + psychoJS._experiment._datatime + ".csv"
+    
+    // Extract data object from experiment
+    let dataObj = psychoJS._experiment._trialsData; 
      
     // Convert data object to CSV
     let data = [Object.keys(dataObj[0])].concat(dataObj).map(it => {
