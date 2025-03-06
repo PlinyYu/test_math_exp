@@ -1040,7 +1040,7 @@ function never_ending_routineRoutineBegin(snapshot) {
        }).join('/n')
      
     // Send data to OSF via DataPipe
-    consloe.log('Saving data...');
+    console.log('Saving data...');
     fetch('https://pipe.jspsych.org/api/data', {
        method: 'POST',
        headers: {
